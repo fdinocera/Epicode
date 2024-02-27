@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    /* Body: #393d41 – 1.2rem – Open Sans – interlinea 1.65 */
+    color: #393d41;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.65;
+}
+
+
+/* ------------------------------------------------ */
+header {
+    background-color: black;
+}
+
+header img {
+    width: 35%;
+    padding: 2rem;    
+}
+/* ------------------------------------------------ */
+
+
+/* ------------------------------------------------ */
+#banner {
+    background-image: url("../images/banner.jpg");
+    background-size: 100%;
+    padding: 3.5rem;
+    margin-bottom: 3em;
+}
+
+#banner p{
+    margin-bottom: 3rem;
+}
+
+#banner h1 {
+    margin: 0;
+    color: #25a2c3;
+}
+
+#banner a{
+    color: white;
+    text-decoration: none;    
+}
+
+button {
+    background-color: #f04c2f;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    padding: 1.5rem 4rem;
+    border-radius: 5px;
+    border-width: 0;
+}
+
+
+
+/* ------------------------------------------------ */
+
+
+article p {
+    margin: 0;
+    padding: 1rem 4rem;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    font-size: 2em;    
+}
+
+h2 {
+    color: #25a2c3;
+    margin-bottom: 0;
+}
+
+
+#notebook img {
+    border-radius: 50%;
+}
+
+
+#testimonianze {
+    color: white;
+    background-color: #e22d0e;
+    margin: 3rem 0;
+    padding: 2rem;
+}
+
+#testimonianze h2 {
+    color: white;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+blockquote div {
+    margin-bottom:2em
+}
+
+cite h2 {
+    font-style: normal;
+    font-weight: normal;    
+}
+
+cite h4 {
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* ---------------------------------------------------------------------- */
+.riquadro {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dee1e3;
+    
+    margin: 2rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.riquadro img {
+    width: 100%;
+}
+
+.riquadro p {
+    padding: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+
+    margin: 0;
+}
+
+h3 {
+    /* Headings: #25a2c3 – Montserrat (bold) – interlinea 1.5 */
+    color: #25a2c3;
+    margin-bottom: 0;
+    font-style: bold;
+}
+/* ---------------------------------------------------------------------- */
+
+footer {
+    background-color: #25a2c3;
+    padding: 3rem;
+    margin-top: 7rem;
+}
+
+footer h1{
+    font-size: 3rem;
+    color: white;    
+    margin-top: 0;
+}
+
+footer a, footer p{
+    color: white;
+    font-size: 1.2rem;
+    color: #c8e7f0;
+    margin:0;
+}
+
+address{
+    font-style: normal;
+}
+
+address p:nth-of-type(3){
+    margin-bottom: 2rem;    
+}
+
+address p:last-child{
+    margin-bottom: 3rem;
+}
+
+hr{
+    width: 55%;
+    text-align:left;
+    margin-bottom: 2rem;    
+}

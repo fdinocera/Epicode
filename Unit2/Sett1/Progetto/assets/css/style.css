@@ -1,0 +1,594 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+nav {
+    position: fixed;
+    margin-top: -10px;
+    width: 100%;
+}
+
+#testata {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffc017;
+    border-bottom: 1px solid #191919;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    75% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    margin-right: 140px;
+    font-size: 1em;
+}
+
+#mVociPulsante ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: space-evenly;
+}
+
+#mVociPulsante {
+    display: flex;
+    align-items: center;
+}
+
+#mVociPulsante ul {
+    padding: 0;
+}
+
+#mVociPulsante ul li {
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+#logo {
+    margin: 2rem;
+    margin-left: 270px;
+}
+
+#getStarted {
+    margin: 10px;
+    background-color: #191919;
+    border-radius: 100px;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    height: 594px;
+    border: 1px solid #191919;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #ffc017;
+}
+
+#emme{
+    width: 600px;
+    height: 490px;    
+    margin-top: 110px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.5em;
+    letter-spacing: 5px;    
+}
+
+#titolo {
+    margin-left: 270px;
+    height: 400px;
+}
+
+#t1 {
+    font-family: "spectral", serif;
+    font-size: 8rem;
+    letter-spacing: -9px;
+    margin-bottom: -14px;
+}
+
+#t2 {
+    font-size: 2rem;
+    width: 600px;
+    margin-bottom: 45px;
+}
+
+#t3 {
+    width: 270px;
+    background-color: #191919;
+    border-radius: 50px;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+#containerTitolo {
+    margin-top: 132px;
+}
+
+#pagina {
+    margin: 0 20%;
+    height: 200px;
+}
+
+.boxTrending {
+    display: flex;
+    width: 700px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+#trending {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 15px;
+    margin-left: 0;
+}
+
+.autore {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.btNumero {
+    font-size: 2.5em;
+    color: #E6E7E7;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.trendingArticolo {
+    display: flex;
+    flex-direction: column;
+}
+
+.data {
+    display: flex;
+    margin: 10px 0;
+    color: #757575;
+    align-items: center;
+}
+
+.data img {
+    margin-left: 5px;
+}
+
+
+.btAutoreNome {
+    margin-left: 14px;
+}
+
+.trendingTitolo {
+    font-weight: bold;
+    font-size: 1.2em;
+    width: 352px;
+}
+
+#paginaTrending {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#trendingContainer {
+
+    border-bottom: 1px solid gray;
+}
+
+.testoData {
+    color: gray;
+    font-size: 1.2em;
+}
+
+#trendingNews {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nAutore {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.nAutore img {
+    border-radius: 50%;
+}
+
+.nAutoreNome {
+    font-weight: bold;
+    font-size: 1em;
+    margin-left: 5px;
+}
+
+.nAutoreNome2 {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.nTitolo {
+    font-weight: bold;
+    font-size: 1.9em;
+    margin-bottom: 10px;
+    width: 600px;
+}
+
+.nTesto {
+    color: gray;
+    width: 610px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.nBloccoUltimaRiga {
+    display: flex;
+    justify-content: space-between;
+    width: 590px;
+}
+
+.nRigaData {
+    display: flex;
+    align-items: center;
+}
+
+.nRigaData img {
+    margin: 0 5px;
+}
+
+.nNews {
+    display: flex;
+    flex-direction: column;
+    width: 610px;
+    margin-right: 35px;
+    margin-bottom: 40px;
+}
+
+.nData {
+    color: #757575;
+}
+
+.nDurataLettura {
+    color: #757575;
+}
+
+.nAging {
+    background-color: #F2F3F3;
+    border-radius: 20px;
+    color: gray;
+    padding: 3px 10px;
+}
+
+.nFoto img {
+    max-width: 200px;
+}
+
+.singolaNews {
+    display: flex;
+    align-items: center;
+}
+
+#mainPage {
+    display: flex;
+    width: 80%;
+    margin: 60px auto;
+}
+
+.btNomeIn {
+    color: #757575;
+}
+
+.btCircle {
+    border-radius: 50%;
+}
+
+.btSquareRounded {
+    border-radius: 9px;
+}
+
+.btAutoreFoto {
+    width: 20px;
+}
+
+.autore img {
+    width: 26px;
+}
+
+#tTitle {
+    margin-left: 10px;
+}
+
+.btDot,
+.nDot {
+    width: 3px;
+    height: 3px;
+    background-color: #757575;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+#news {
+    margin-right: 100px;
+}
+
+.nAutoreIn {
+    color: #757575;
+}
+
+.ftButton {
+    background-color: white;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #757575;
+    color: #757575;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.ftRiga {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#ftBox {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 440px;
+    border-bottom: 1px solid #E6E7E7;
+    padding-bottom: 50px;
+}
+
+#ftFondo {
+    display: flex;
+    flex-wrap: wrap;
+    color: #757575;
+    margin-top: 20px;
+    width: 410px;
+}
+
+#ftFondo span {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#ftFooter {
+    margin-left: 40px;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+}
+
+
+/*** max-width:575 ************************************************/
+@media screen and (max-width: 767px) {
+
+    #logo {
+        margin-left: 1rem;
+    }
+
+    #menu {
+        margin-right: 50px;
+    }
+
+    #mVociPulsante ul li {
+        margin: 0;
+    }
+
+    #mVociPulsante ul li:nth-of-type(1) {
+        display: none;
+    }
+
+    #mVociPulsante ul li:nth-of-type(2) {
+        display: none;
+    }
+
+    #mVociPulsante ul li:nth-of-type(3) {
+        display: none;
+    }
+
+    #t1 {
+        font-size: 6rem;
+    }
+
+    #t2 {
+        font-size: 1.5rem;
+        width: 430px;
+    }
+
+    #t3 {
+        width: 160px;
+    }
+
+    #titolo {
+        margin-left: 40px;
+    }
+
+    #container {
+        height: 500px;
+    }
+
+    #mainPage {
+        flex-direction: column-reverse;
+    }
+
+    #ftBox {
+        width: 600px;
+    }
+
+    #ftFooter {
+        margin-bottom: 30px;
+        position: static;
+        margin-left: 0;
+    }
+
+    .nTesto {
+        font-size: 1em;
+        width: 390px;
+        margin-bottom: 4px;
+    }
+
+    .nNews {
+        margin-right: 10px;
+        margin-bottom: 25px;
+    }
+
+    .nTitolo {
+        font-size: 1em;
+        width: 390px;
+    }
+
+    .nRigaData>span {
+        font-size: 0.8em;
+    }
+
+    .nBloccoUltimaRiga {
+        justify-content: space-between;
+        width: 395px;
+    }
+
+    .data {
+        justify-content: space-between;
+    }
+
+    .data img {
+        display: none;
+    }
+
+    .boxTrending {
+        display: flex;
+        width: 550px;
+        margin-right: 0;
+    }
+
+    #ftFondo {
+        width: 565px;
+    }
+
+    #news {
+        margin-right: 0;
+    }
+
+    .singolaNews {
+        justify-content: space-between;
+    }
+    #emme{     
+        opacity: 0;
+    }
+
+    /*** end max-width:575 ************************************************/
+}
+
+/*** max-width: 1199px (tablet) ***************************************/
+@media screen and (max-width: 1199px) {
+
+    #logo {
+        margin-left: 50px;
+    }
+
+    #menu {
+        margin-right: 50px;
+    }
+
+    #containerTitolo {
+        margin-right: 50px;
+    }
+
+    #titolo {
+        margin-left: 50px;
+    }
+
+    .boxTrending {
+        width: 400px;
+    }
+
+    #mainPage {
+        flex-flow: column-reverse;
+    }
+
+    .boxTrending {
+        width: 450px;
+    }
+
+    .data {
+        justify-content: space-between;
+    }
+
+    .data img {
+        display: none;
+    }
+
+    #ftFooter {
+        position: static;
+        top: 100px;
+        align-self: flex-start;
+        width: 100%;
+        margin-left: 0;        
+    }
+
+    #ftBox {
+        width: 100%;
+    }
+
+    #ftFondo {
+        width: 100%;
+    }
+
+    #news {
+        margin-right: 0;
+    }
+
+    .singolaNews {
+        justify-content: space-between;
+    }
+    .nNews{
+        margin-right: 0;
+        width: 730px;
+    }
+    .nTitolo{
+        width: 100%;
+    }
+    .nTesto{
+        width: 100%;
+    }
+    .nBloccoUltimaRiga{
+        width: 100%;
+    }
+    #t3{
+        font-size: 1.5em;
+    }
+    #emme{     
+        width: 400px;
+    }
+    
+    /*** end max-width: 1199px ********************************************/
+}

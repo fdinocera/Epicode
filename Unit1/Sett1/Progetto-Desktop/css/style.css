@@ -1,0 +1,145 @@
+body {
+    color: #393d41;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+#logo {
+    text-align: left;
+    background-color: black;
+    padding: 1.5rem 3.5rem;
+}
+
+#logo img {
+    width: 13%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #25a2c3;
+}
+
+#banner {
+    background-image: url("../images/banner.jpg");
+    padding: 8rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center
+}
+
+#banner button {
+    background-color: #f04c2f;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
+    padding: 1rem 2rem;
+    border-width: 0;
+    border-radius: 5px;
+}
+
+#container {
+    text-align: center;
+}
+
+#container div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#container img {
+    border-radius: 50%;
+}
+
+#container h2 {
+    text-align: left;
+}
+
+#container div:last-of-type {
+    margin: 3rem;
+}
+
+#container div:last-of-type p {
+    text-align: left;
+    width: 65%;
+}
+
+#testimonial {
+    background-color: #E22D0E;
+    color: white;
+    text-align: center;
+    padding: 3rem;
+}
+
+#testimonial h2 {
+    color: white;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+cite p {
+    font-style: normal;
+    margin: 0.5rem;
+}
+
+cite p:last-child {
+    font-size: 0.7rem;
+}
+
+#schede {
+    text-align: center;
+}
+
+.scheda {
+    display: inline-block;
+    width: 25%;
+    height: 40vh;
+    vertical-align: middle;
+    margin: 4rem 1rem;
+    overflow: hidden;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid #dee1e3;
+}
+
+.scheda img {
+    height: 25vh;
+}
+
+#contatti {
+    border: 1px solid red;
+}
+
+footer {
+    color: #c8e7f0;
+    text-align: left;
+    background-color: #25a2c3;
+    padding: 5rem 35%;
+}
+
+footer h1 {
+    text-align: left;
+    color: white;
+}
+
+footer a {
+    color: #c8e7f0;
+    text-align: left;
+}
+
+footer p {
+    margin: 0.4rem;
+}
+
+footer p:last-of-type {
+    font-size: 0.8rem;
+    padding-left: 2rem;
+}
+
+hr {
+    width: 60%;
+    margin: 2rem 0;
+}

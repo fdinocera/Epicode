@@ -1,0 +1,120 @@
+@import 'reset';
+@import 'colori';
+@import 'mixin';
+
+
+$dimensione-logo: 100px;
+
+$button-margin: 6px;
+$button-padding: 15px;
+$button-border: 0;
+$button-radius: 5px;
+$button-height: 50px;
+
+
+#container{
+    background-color: $colore-sfondo;        
+}
+
+#logo {
+    width: 100px;
+}
+
+img {
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 150px;
+    padding: 40px 0;
+}
+
+main {
+    background-color: $colore-sfondo;
+    margin: 10px 150px;    
+    position: relative;
+    top: -40px;
+    animation: main 2s ease;
+}
+
+h1{
+    font-weight: 900;
+    font-size: 6rem;
+    color: $colore-titolo;
+    width: 40%;
+    letter-spacing: -4px;
+    line-height: 1;    
+    margin-bottom: 10px;
+}
+
+section{
+    padding-bottom: 65px;
+}
+
+li, p, button {
+    color: $colore-testo
+}
+
+ul li {
+    display: inline-block;    
+    margin: 10px;
+}
+
+p{
+    width: 60%;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: $colore-testo
+}
+
+button:nth-of-type(1) {
+    background-color: $colore-button1;    
+    @include pulsanti();
+    margin-left: 0;
+}
+button:nth-of-type(2) {
+    background-color: $colore-button2;    
+    @include pulsanti();
+}
+button:nth-of-type(3) {
+    background-color: $colore-button3;    
+    @include pulsanti();
+}
+
+#laptop{
+    width: 550px;    
+    border-radius: 25px;    
+    border: 2px solid #B278F5;    
+    position: relative;
+    top: -400px;
+    left: 60%;
+    animation: laptop 2s ease;
+}
+
+#laptop img{
+    border-radius: 25px;            
+}
+
+footer{
+    display: flex;    
+    position: relative;
+    top: -400px;
+}
+
+footer img{
+    margin: 10px;
+    border-radius: 25px;
+}
+
+@keyframes laptop {
+    from {top: -200px;}
+    to {top: -400px;}
+}
+
+@keyframes main {
+    from {top: -80px;}
+    to {top: -40px;}
+}

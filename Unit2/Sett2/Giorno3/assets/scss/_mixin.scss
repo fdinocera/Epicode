@@ -1,0 +1,12 @@
+@mixin titoli {
+    color: $colore-titoli;
+    font-weight: bold;
+}
+
+@mixin pulsanti{
+    margin: $button-margin;
+    padding: $button-padding;
+    border: $button-border;
+    border-radius: $button-radius;
+    height: $button-height;
+}

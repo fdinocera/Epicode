@@ -1,0 +1,24 @@
+.button-color:first-of-type {
+    color: white;
+    background-color: #1ACB98;
+}
+
+.button-color:last-of-type {
+    color: #000;
+    background-color: #FFFFFF;
+}
+
+.bgColor {
+    background-color: #7550FE;
+
+}
+
+.jTitle {
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+.jText {
+    color: antiquewhite;
+}
+

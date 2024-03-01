@@ -1,0 +1,35 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 148px;
+    margin-bottom: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+    img {
+        width: 110px;
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    img {
+        width: 330px;
+        margin-bottom: 5px;
+    }
+
+    #avatar{
+        width: 80px;
+    }
+
+    #logo{
+        width: 150px;
+    }
+}
+

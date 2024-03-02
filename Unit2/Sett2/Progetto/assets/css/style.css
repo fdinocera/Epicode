@@ -24,12 +24,15 @@ img {
         margin-bottom: 5px;
     }
 
-    #avatar{
+    #avatar {
         width: 80px;
     }
 
-    #logo{
+    #logo {
         width: 150px;
     }
 }
 
+.carousel-item div img:hover {
+    scale: 1.1;
+}

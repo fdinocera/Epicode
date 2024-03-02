@@ -23,8 +23,8 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon text-secondary">
-                        <i class="bi bi-list"></i>
+                    <span class="navbar-toggler-icon">
+                        <!-- <i class="bi bi-list"></i> -->
                     </span>
                 </button>
 
@@ -49,11 +49,24 @@
                     <div class="text-secondary mx-3"><i class="bi bi-search"></i></div>
                     <div class="text-secondary mx-3">KIDS</div>
                     <div class="text-secondary mx-3"><i class="bi bi-bell"></i></div>
-                    <button class="btn">
-                        <a class="navbar-brand" href="profile.html">
+                    <div class="dropdown">
+                        <button class="btn bg-black fs-2 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="/assets/avatar.png" alt="" style="width: 60px;">
-                        </a>
-                    </button>
+                        </button>
+                        <ul class="dropdown-menu bg-black dropdown-menu-dark">
+                            <li>                                
+                                <a class="dropdown-item text-white" href="#">
+                                    <img src="/assets/avatar.png" alt="" style="width: 35px;">
+                                    &nbsp;Epicoder #1
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item text-white" href="profile.html">Manage Profiles</a></li>
+                            <li><a class="dropdown-item text-white" href="account.html">Account</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Help Center</a></li>
+                            <li><a class="dropdown-item text-white" href="#">&nbsp;</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Signout Netflix</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -69,10 +82,10 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Genres
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <ul class="dropdown-menu bg-black dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#">Azione</a></li>
+                        <li><a class="dropdown-item" href="#">Thriller</a></li>
+                        <li><a class="dropdown-item" href="#">Drammatico</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,7 +98,7 @@
         <!-- carousel 1 -->
         <section class="mb-5">
             <h2 class="text-white mx-4">Trending Now</h2>
-            <div id="carouselExample1" class="carousel slide mx-4">
+            <div id="carouselExample1" class="carousel slide mx-4" data-bs-ride="carousel" data-bs-pause="hover" data-bs-interval="2500">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div>
@@ -124,7 +137,7 @@
         <!-- carousel 2 -->
         <section class="mb-5">
             <h2 class="text-white mx-4">Watch It Again</h2>
-            <div id="carouselExample2" class="carousel slide mx-4">
+            <div id="carouselExample2" class="carousel slide mx-4" data-bs-ride="carousel" data-bs-pause="hover" data-bs-interval="2500">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div>
@@ -163,9 +176,9 @@
         <!-- carousel 3 -->
         <section class="mb-5">
             <h2 class="text-white mx-4">New Releases</h2>
-            <div id="carouselExample3" class="carousel slide mx-4">
+            <div id="carouselExample3" class="carousel slide mx-4" data-bs-ride="carousel" data-bs-pause="hover" data-bs-interval="2500">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active">                        
                         <div>
                             <img src="/assets/media/media12.jpg" class="" alt="...">
                             <img src="/assets/media/media13.jpg" class="" alt="...">
@@ -176,7 +189,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div>
+                        <div>                            
                             <img src="/assets/media/media12.jpg" class="" alt="...">
                             <img src="/assets/media/media13.jpg" class="" alt="...">
                             <img src="/assets/media/media14.webp" class="" alt="...">

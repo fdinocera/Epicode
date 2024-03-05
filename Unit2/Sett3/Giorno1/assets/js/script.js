@@ -122,7 +122,4 @@ const salvaDati = () => {
         recordsStorage += `${animale.petName},${animale.ownerName},${animale.species},${animale.breed};`;
     });
     localStorage.setItem('records', recordsStorage);
-}
-
-
-
+};

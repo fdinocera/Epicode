@@ -3,15 +3,19 @@
 
 const buttonInserisci = document.getElementById('inserisci');
 const buttonRimuovi = document.getElementById('rimuovi');
+const labelText = document.getElementById('dati');
 
 
 buttonInserisci.addEventListener('click', () => {
-    const inputValue= document.getElementById('input').value;
+
+    let inputValue = document.getElementById('input').value;
     localStorage.setItem('usr', inputValue);
+
+    labelText.innerText = inputValue;    
+    document.getElementById('input').value = '';
 });
 
 buttonRimuovi.addEventListener('click', () => {
-
-    //const dati = localStorage.getItem('usr');
     localStorage.clear();
+    labelText.innerText = '';
 });

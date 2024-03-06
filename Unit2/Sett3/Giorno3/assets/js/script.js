@@ -58,27 +58,27 @@
 let endpoint = 'https://striveschool-api.herokuapp.com/books';
 let libreria = [];
 
-
-
-
 const getData = async () => {
     const data = await fetch(endpoint)
         .then(response => {
-            return response.json();
-            // libreria = response;
-            // let a = 0;
+            return response.json();            
         })
         .then(data => {
-            libreria = data;
-            let a = 0;
+            libreria = data;            
         })
         .catch(err => {
-            //messaggio errore
-            let a = 0;
+            //messaggio errore            
         });
 };
 
 addEventListener('load', init);
 function init() {
     getData();
+    stampaDati();
+}
+
+const stampaDati=()=>{
+    for (let i=0;i<libreria.length;i++){
+        
+    }
 }

@@ -1,28 +1,28 @@
-let endpoint = 'https://striveschool-api.herokuapp.com/books';
-let libreria = [];
-let carrello = [];
-const colonna1 = document.getElementById('colonna1');
-const colonna2 = document.getElementById('colonna2');
-const colonna3 = document.getElementById('colonna3');
-const colonna4 = document.getElementById('colonna4');
-const colonna5 = document.getElementById('colonna5');
+let searchUrl = 'https://striveschool-api.herokuapp.com/books';
+let books = [];
+let shoppingCartList = [];
+const cart = document.getElementById('cart');
+const cards = document.getElementById('cards');
 
 
 addEventListener('load', init);
 
 function init() {
     getData();
-    stampaDati();
+    if (localStorage.getItem('carrello')) {
+        shoppingCartList = JSON.parse(localStorage.getItem('carrello'));
+        caricaCarrello();
+    }
 }
 
 const getData = async () => {
 
-    await fetch(endpoint)
+    await fetch(searchUrl)
         .then(response => {
             return response.json();
         })
         .then(data => {
-            libreria = data;
+            books = data;
             stampaDati();
         })
         .catch(err => {
@@ -31,12 +31,41 @@ const getData = async () => {
 };
 
 const stampaDati = () => {
-    for (let i = 0; i < libreria.length; i += 5) {
-        colonna1.appendChild(getLibro(libreria[i]));
-        colonna2.appendChild(getLibro(libreria[i + 1]));
-        colonna3.appendChild(getLibro(libreria[i + 2]));
-        colonna4.appendChild(getLibro(libreria[i + 3]));
-        colonna5.appendChild(getLibro(libreria[i + 4]));
+    for (let i = 0; i < books.length; i++) {
+        let div1 = document.createElement('div');
+        div1.classList.add('col');
+        div1.innerHTML = `
+        <div class="card h-100">
+            <img src="${books[i].img}" class="card-img-top img-fluid" />
+            <div class="card-body">
+                <h5 class="card-title">${books[i].title}</h5> 
+                <p class="card-text badge rounded-pill bg-black text-white px-2">${books[i].category}</p>
+                <p class="fs-4">${books[i].price} €</p>
+                <div>
+                    <button class="btn btn-danger" onclick="addToCart('${books[i].asin}')">Compra ora</button>
+                    <button class="btn btn-outline-danger" onclick="skipMe()">Scarta</button>
+                </div>
+            </div>
+        </div>        
+        `;
+
+        // <div class="card h-100">
+        //     <img src="${books[i].img}" class="img-fluid card-img-top" />
+        //     <div class="card-body">
+        //         <h5 class="card-title">${books[i].title}</h5>
+        //         <p class="card-text badge rounded-pill bg-dark mb-2">${books[i].category}</p>
+        //         <p class="fs-4">${books[i].price} €</p>
+        //         <div>
+        //             <button class="btn btn-danger" onclick="addToCart('${books[i].asin}')">Compra ora</button>
+        //             <button class="btn btn-outline-danger" onclick="skipMe()">Scarta</button>
+        //         </div>
+        //     </div>
+        // </div>
+
+        cards.appendChild(div1);
+        //cards.appendChild(getLibro(libreria[i]));
+
+
     }
 };
 
@@ -75,19 +104,13 @@ const getLibro = (libro) => {
     h5.innerText = libro.title;
     div2.appendChild(h5);
 
-
     //pulsante1
     let link1 = document.createElement('a');
     link1.classList.add('btn');
     link1.classList.add('btn-primary');
     link1.classList.add('bg-danger');
     link1.innerText = 'Compra ora';
-
-
-    //link1.setAttribute("onclick","aggiungiCarrello('blah');");
     link1.setAttribute("onclick", `aggiungiCarrello(${libro.asin})`);
-
-
     link1.href = '#';
     div2.appendChild(link1);
 
@@ -104,12 +127,43 @@ const getLibro = (libro) => {
     return div1;
 };
 
-const aggiungiCarrello = (asin) => {
-
-    //alert('asin libro' + asin);
-    libreria.forEach((element) => {
-        if (element.asin == asin) {
-            carrello.push(element);
-        }
-    });
+const addToCart = (asin) => {
+    const book = books.find(book => book.asin == asin);
+    shoppingCartList.push(book);
+    localStorage.setItem('carrello', JSON.stringify(shoppingCartList));
+    caricaCarrello();
 };
+
+function caricaCarrello() {
+    cart.innerHTML = '';
+
+    shoppingCartList.forEach(elem => {
+        cart.innerHTML += `
+        <div>
+            <div class="d-flex align-items-start">
+                <img src="${elem.img}" class="img-fluid" width="60" />
+                <div class="flex-grow-1">
+                    <p class="fw-bold">
+                        ${elem.price} €
+                    </p>
+                    <div>
+                        <button class="btn btn-danger" onclick="deleteItem('${elem.asin}')"  >Elimina</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+    });
+}
+
+function skipMe() {
+
+}
+
+function deleteItem(asin) {
+
+    const index = shoppingCartList.findIndex(libro => libro.asin == asin);
+    shoppingCartList.splice(index, 1);
+    localStorage.setItem('carrello', JSON.stringify(shoppingCartList));
+    caricaCarrello();
+}

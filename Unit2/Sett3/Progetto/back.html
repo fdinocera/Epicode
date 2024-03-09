@@ -14,7 +14,9 @@
     <header class="bg-black text-danger">
         <div class="d-flex justify-content-between align-items-center container-fluid h-100">
             <h1 class="m-3">
-                <img src="/assets/img/logoAmazon.png" alt="logo" id="logo">
+                <a href="index.html">
+                    <img src="/assets/img/logoAmazon.png" alt="logo" id="logo">
+                </a>
             </h1>
             <span>
                 <a href="" class="text-white">Back Office</a>
@@ -23,58 +25,65 @@
     </header>
     <main>
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center mt-4">
-                <h1>Aggiungi prodotto</h1>
-                <a href="javascript:history.back()">Go back</a>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="d-flex align-items-center">
+                    <h1 id="titolo"></h1>
+                    <div class="spinner-border ms-2 text-primary" role="status" id="spinner">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="javascript:history.back()">Go back</a>
+                </div>
             </div>
             <hr />
-
-            <div>
+            <form class="mb-3">
+                <div>
+                    <img src="" alt="" id="fotoProdotto" style="max-width: 250px;" />
+                </div>
                 <div class="my-4">
                     <div>Nome</div>
                     <div class="border border-1 rounded-1">
-                        <input type="text" id="nome" class="border-0 w-100" placeholder="Nome prodotto">
+                        <input type="text" id="nome" class="border-0 w-100" placeholder="Nome prodotto" required />
                     </div>
                 </div>
                 <div class="my-4">
                     <div>Brand</div>
                     <div class="border border-1 rounded-1">
-                        <input type="text" id="brand" class="border border-0 w-100" placeholder="Modello">
+                        <input type="text" id="brand" class="border border-0 w-100" placeholder="Brand" required />
                     </div>
                 </div>
                 <div class="my-4">
                     <div>Prezzo</div>
                     <div class="border border-1 rounded-1">
-                        <input type="number" id="prezzo" class="border border-0 w-100" placeholder="0€" min="0">
+                        <input type="number" id="prezzo" class="border border-0 w-100" placeholder="0€" min="1"
+                            required />
                     </div>
                 </div>
                 <div class="my-4">
                     <div>URL immagine</div>
                     <div class="border border-1 rounded-1">
                         <input type="text" id="url" class="border border-0 w-100"
-                            placeholder="http://placehold.it/300X400">
+                            placeholder="http://placehold.it/300X400" required onfocusout="visualizzaFoto()" />
                     </div>
                 </div>
                 <div class="my-4">
                     <div>Desrizione prodotto</div>
                     <div class="border border-1 rounded-1">
-                        <textarea id="descr" class="border border-0 w-100"></textarea>
+                        <textarea id="descr" class="border border-0 w-100" required></textarea>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-6"></div>
                 <div class="row">
-                    <div class="col-6"></div>
-                    <button class="btn rounded-1 border border-1 col-2 me-2" id="reset">Reset</button>
-                    <button class="btn rounded-1 bg-warning text-black col-2" id="save">Save</button>
+                    <button type="button" class="col-3 btn rounded-1 bg-danger text-white border-1 w-25 me-auto"
+                        onclick="eliminaProdotto()">Elimina</button>
+                    <button type="reset" class="col-3 btn rounded-1 border border-1 bg-light me-2 w-25" id="reset"
+                        onclick="nascondiFoto()">Reset</button>
+                    <button type="submit" class="col-3 btn rounded-1 bg-warning text-black w-25" id="save">Save</button>
                 </div>
-            </div>
-        </div>        
+            </form>
+        </div>
     </main>
-
-    <script src="/assets/js/detail.js"></script>
+    <script src="/assets/js/back.js"></script>
 </body>
 
 </html>

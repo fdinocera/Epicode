@@ -7,10 +7,10 @@ const id = location.href.split('=')[1];
 addEventListener('load', init);
 
 function init() {
-    getData(id);
+    getData();
 }
 
-const getData = async (id) => {
+const getData = async () => {
     try {
         let read = await fetch("https://striveschool-api.herokuapp.com/api/product/" + id, {
             headers: {
@@ -29,6 +29,8 @@ const getData = async (id) => {
 };
 
 function mostraDettagliProdotto() {
+    document.getElementById('backOffice').href = `back.html?id=${record._id}`;
+
     let div = document.createElement('div');
     div.innerHTML = `
         <div class="row">

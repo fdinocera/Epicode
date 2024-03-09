@@ -74,15 +74,75 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="button" class="col-3 btn rounded-1 bg-danger text-white border-1 w-25 me-auto"
-                        onclick="eliminaProdotto()">Elimina</button>
-                    <button type="reset" class="col-3 btn rounded-1 border border-1 bg-light me-2 w-25" id="reset"
-                        onclick="nascondiFoto()">Reset</button>
-                    <button type="submit" class="col-3 btn rounded-1 bg-warning text-black w-25" id="save">Save</button>
+                    <button type="button" class="col-3 btn rounded-1 bg-danger text-white border-1 w-25 me-auto" data-bs-toggle="modal" data-bs-target="#modaleElimina">Elimina</button>
+                    <button type="button" class="col-3 btn rounded-1 border border-1 bg-light me-2 w-25" id="reset" data-bs-toggle="modal" data-bs-target="#modaleReset">Reset</button>
+                    <button type="submit" class="col-3 btn rounded-1 bg-warning text-black w-25" id="save" data-bs-toggle="modal" data-bs-target="#modaleSave">Save</button>
                 </div>
             </form>
         </div>
     </main>
+        
+    <!-- modale elimina -->
+    <div class="modal fade" id="modaleElimina" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Amazon Back Office</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Confermi l'eliminazione del prodotto?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="eliminaProdotto()">Conferma</button>                            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modale reset -->
+    <div class="modal fade" id="modaleReset" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Amazon Back Office</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Confermi la cancellazione dei dati del form?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="resetForm()">Conferma</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modale aggiungi/modifica prodotto-->
+    <div class="modal fade" id="modaleSave" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Amazon Back Office</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="messaggioErrore">
+                    Per l'inserimento del prodotto è necessario compilare tutti i campi.
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button> -->
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="/assets/js/back.js"></script>
 </body>
 

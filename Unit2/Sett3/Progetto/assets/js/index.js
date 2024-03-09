@@ -1,12 +1,30 @@
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTQzOTJkN2IxMTAwMTkwZTZlYmMiLCJpYXQiOjE3MDk4OTI2NjUsImV4cCI6MTcxMTEwMjI2NX0.3ajAG6PjKKhCnDptXTncAYNx9ckeI7sAohoUfeFQUxg';
 const dataUrl = "https://striveschool-api.herokuapp.com/api/put-your-endpoint-here/";
 const prodotti = document.getElementById('prodotti');
+const btnModaleMsg = document.getElementById('divAttivaModale');
+const divMessaggioModale = document.getElementById('messaggioPagina');
+const msgUrl = location.href.split('?')[1];
+
 let lista = [];
 
 addEventListener('load', init);
 
 function init() {
     getData();
+    if (msgUrl == 'modificaOk') {
+        divMessaggioModale.innerText = 'Prodotto modificato correttamente';
+        btnModaleMsg.click();
+    }
+    //inserimentoOk
+    if (msgUrl == 'inserimentoOk') {
+        divMessaggioModale.innerText = 'Prodotto inserito correttamente';
+        btnModaleMsg.click();
+    }
+    //eliminazioneOk
+    if (msgUrl == 'eliminazioneOk') {
+        divMessaggioModale.innerText = 'Prodotto eliminato correttamente';
+        btnModaleMsg.click();
+    }
 }
 
 const getData = async () => {
@@ -22,8 +40,9 @@ const getData = async () => {
         lista = response;
         mostraProdotti();
     }
-    catch (error) {
-        console.log(error);
+    catch (error) {        
+        divMessaggioModale.innerText = 'Qualcosa è andato storto! '+ error;
+        btnModaleMsg.click();
     }
 };
 

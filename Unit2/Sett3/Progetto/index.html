@@ -9,17 +9,18 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
+
 <body>
     <header class="bg-black text-danger">
         <div class="d-flex justify-content-between align-items-center container-fluid h-100">
             <h1 class="m-3">
-                <img src="/assets/img/logoAmazon.png" alt="logo" id="logo"/>
+                <img src="/assets/img/logoAmazon.png" alt="logo" id="logo" />
             </h1>
             <span>
                 <a href="back.html" class="text-white">Back Office</a>
             </span>
         </div>
-    </header>    
+    </header>
 
     <main>
         <div class="container">
@@ -30,12 +31,29 @@
                         <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
-                <hr/>
+                <hr />
             </div>
             <div class="row row-cols-5" id="prodotti">
             </div>
         </div>
     </main>
+
+    <!-- modale messaggio pagina -->
+    <button type="button" class="border border-0" data-bs-toggle="modal" data-bs-target="#modaleMsg" id="divAttivaModale"></button>
+    <div class="modal fade" id="modaleMsg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Amazon Back Office</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="messaggioPagina"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

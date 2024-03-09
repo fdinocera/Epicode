@@ -8,8 +8,8 @@ const description = document.getElementById('descr');
 const resetBtn = document.getElementById('reset');
 const saveBtn = document.getElementById('save');
 const messaggioErrore = document.getElementById('messaggioErrore');
+const divAttivaModale=document.getElementById('divAttivaModale');
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTQzOTJkN2IxMTAwMTkwZTZlYmMiLCJpYXQiOjE3MDk4OTI2NjUsImV4cCI6MTcxMTEwMjI2NX0.3ajAG6PjKKhCnDptXTncAYNx9ckeI7sAohoUfeFQUxg';
-const dataUrl = "https://striveschool-api.herokuapp.com/api/put-your-endpoint-here/";
 const id = location.href.split('=')[1];
 let product;
 
@@ -63,8 +63,9 @@ const readData = async () => {
         product = response;
         popolaForm();
     }
-    catch (error) {
-        console.log(error);
+    catch (error) {        
+        messaggioErrore.innerText = 'Qualcosa è andato storto! '+ error;
+        divAttivaModale.click();
     }
 };
 
@@ -90,7 +91,8 @@ const updateData = async (data) => {
         location.href = 'index.html?modificaOk';
     }
     catch (error) {
-        console.log(error);
+        messaggioErrore.innerText = 'Qualcosa è andato storto! '+ error;
+        divAttivaModale.click();
     }
 };
 
@@ -107,7 +109,8 @@ const postData = async (data) => {
         location.href = 'index.html?inserimentoOk';
     }
     catch (error) {
-        console.log(error);
+        messaggioErrore.innerText = 'Qualcosa è andato storto! '+ error;
+        divAttivaModale.click();
     }
 };
 
@@ -127,7 +130,8 @@ const deleteData = async () => {
         location.href = 'index.html?eliminazioneOk';
     }
     catch (error) {
-        console.log(error);
+        messaggioErrore.innerText = 'Qualcosa è andato storto! '+ error;
+        divAttivaModale.click();
     }
 };
 

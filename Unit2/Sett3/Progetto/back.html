@@ -122,6 +122,7 @@
     </div>
 
     <!-- modale aggiungi/modifica prodotto-->
+    <button type="button" class="border border-0" data-bs-toggle="modal" data-bs-target="#modaleSave" id="divAttivaModale"></button>
     <div class="modal fade" id="modaleSave" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -129,11 +130,8 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Amazon Back Office</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="messaggioErrore">
-                    Per l'inserimento del prodotto è necessario compilare tutti i campi.
-                </div>
-                <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button> -->
+                <div class="modal-body" id="messaggioErrore"></div>
+                <div class="modal-footer">                    
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
                 </div>
             </div>

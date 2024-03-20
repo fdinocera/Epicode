@@ -23,14 +23,14 @@
     </nav>
 </header>
 
-<div class="container mt-5">
-    <div class="row d-flex">
+<div class="container mt-5 px-6">
 
-        <div class="col-9">
+    <div class="row">
+        <div class="col-9 px-5">
             <div class="row">
                 <div class="p-5 mb-4 bg-body-secondary rounded-3">
                     <div class="container-fluid py-5">
-                        <h1 class="display-5 fw-bold">In evidenza: She has seen this scene before.</h1>
+                        <h1 class="display-5 fw-bold"> {{record0.title}} </h1>
                         <a href="#">Leggi di più...</a>
                     </div>
                 </div>
@@ -40,12 +40,7 @@
                 <div class="col-6">
                     <div class="card border-0">
                         <div class="card-body">
-                            <span *ngFor="let tag of record1.tags let i=index">
-                                <span *ngIf="i < record1.tags.length-1">
-                                    <span class="text-primary">{{tag.toUpperCase()}}, </span>
-                                </span>
-                            </span>
-                            <span class="text-primary">{{record1.tags[record1.tags.length-1].toLocaleUpperCase()}}</span>
+                            <span class="text-uppercase fw-bold text-primary-emphasis">{{record1.tags.join(', ')}}</span>
                             <h5 class="card-title">{{record1.title}}</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Reactions: {{record1.reactions}}</h6>
                             <p class="card-text"> {{record1.body}} </p>
@@ -56,13 +51,8 @@
 
                 <div class="col-6">
                     <div class="card border-0">
-                        <div class="card-body">                            
-                            <span *ngFor="let tag of record2.tags let i=index">
-                                <span *ngIf="i < record2.tags.length-1">
-                                    <span class="text-primary">{{tag.toUpperCase()}}, </span>
-                                </span>
-                            </span>
-                            <span class="text-primary">{{record2.tags[record2.tags.length-1].toLocaleUpperCase()}}</span>
+                        <div class="card-body">
+                            <span class="text-uppercase fw-bold text-primary-emphasis">{{record2.tags.join(', ')}}</span>
                             <h5 class="card-title">{{record2.title}}</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Reactions: {{record2.reactions}}</h6>
                             <p class="card-text"> {{record2.body}} </p>
@@ -73,10 +63,38 @@
             </div>
         </div>
 
-        <div class="col-3 border border-1">
+        <div class="col-3 px-5 rounded-3 bg-body-secondary">
             <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">In evidenza: She has seen this scene before.</h1>
-                <a href="#">Leggi di più...</a>
+                <h5 class="">Potrebbero piacerti:</h5>
+
+                <div class="mb-4">
+                    <div>🔗<a href="#">{{record3.title}}</a>
+                    </div>
+                    <div class="badge bg-primary me-1" *ngFor=" let tag of record3.tags">{{tag}} </div>
+                    <div>{{record3.reactions}} 👍</div>
+                </div>
+                <div class="mb-4">
+                    <div>🔗<a href="#">{{record4.title}}</a>
+                    </div>
+                    <div class="badge bg-primary me-1" *ngFor=" let tag of record4.tags">{{tag}} </div>
+                    <div>{{record4.reactions}} 👍</div>
+                </div>
+                <div class="mb-4">
+                    <div>🔗<a href="#">{{record5.title}}</a>
+                    </div>
+                    <div class="badge bg-primary me-1" *ngFor=" let tag of record5.tags">{{tag}} </div>
+                    <div>{{record5.reactions}} 👍</div>
+                </div>
+                <div class="mb-4">
+                    <div>🔗<a href="#">{{record6.title}}</a>
+                    </div>
+                    <div class="badge bg-primary me-1" *ngFor=" let tag of record6.tags">{{tag}} </div>
+                    <div>{{record6.reactions}} 👍</div>
+                </div>
+
+                <h5 class="mb-4">Vedi anche:</h5>
+                <div class="mb-4"><a href="#">Post attivi</a></div>
+                <div><a href="#">Post inattivi</a></div>
             </div>
         </div>
     </div>

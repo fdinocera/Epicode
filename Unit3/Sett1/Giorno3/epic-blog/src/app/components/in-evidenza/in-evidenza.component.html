@@ -1,9 +1,8 @@
 <div class="row">
     <div class="p-5 mb-4 bg-body-secondary rounded-3">
         <div class="container-fluid py-5">
-            <!-- <h1 class="display-5 fw-bold"> {{record0.title}} </h1> -->
-            <h1 class="display-5 fw-bold"> {{record.title}} </h1>
-            <a routerLink="/details">Leggi di più...</a>
+            <h1 class="display-5 fw-bold"> {{record.title}} </h1>            
+            <a [routerLink]="['/details', record.id]">Leggi di più...</a>
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@ import { DetailsComponent } from './components/details/details.component';
 const routes: Route[] = [
     {
         path: '',
-        component: HomeComponent        
+        component: HomeComponent
     },
     {
         path: 'active-posts',
@@ -26,8 +26,12 @@ const routes: Route[] = [
         component: InactivePostsComponent
     },
     {
-        path: 'details',
+        path: 'details/:id',
         component: DetailsComponent
+    },    
+    {
+        path: '**',
+        redirectTo: ''
     }
 ];
 

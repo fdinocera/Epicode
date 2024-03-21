@@ -5,7 +5,7 @@
             <h5 class="card-title">{{record.title}}</h5>
             <h6 class="card-subtitle mb-2 text-body-secondary">Reactions: {{record.reactions}}</h6>
             <p class="card-text"> {{record.body}} </p>
-            <a routerLink="/details" class="card-link">Leggi di più...</a>
+            <a [routerLink]="['/details', record.id]" class="card-link">Leggi di più...</a>
         </div>
     </div>
 </div>

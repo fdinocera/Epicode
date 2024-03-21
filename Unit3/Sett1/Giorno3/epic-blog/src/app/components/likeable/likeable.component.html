@@ -1,25 +1,25 @@
 
 
 <div class="mb-4">
-    <div>🔗<a href="#">{{likeablePosts[0].title}}</a>
+    <div>🔗<a [routerLink]="['/details', likeablePosts[0].id]">{{likeablePosts[0].title}}</a>
     </div>
     <div class="badge bg-primary me-1" *ngFor=" let tag of likeablePosts[0].tags">{{tag}} </div>
     <div>{{likeablePosts[0].reactions}} 👍</div>
 </div>
 <div class="mb-4">
-    <div>🔗<a href="#">{{likeablePosts[1].title}}</a>
+    <div>🔗<a [routerLink]="['/details', likeablePosts[1].id]">{{likeablePosts[1].title}}</a>
     </div>
     <div class="badge bg-primary me-1" *ngFor=" let tag of likeablePosts[1].tags">{{tag}} </div>
     <div>{{likeablePosts[1].reactions}} 👍</div>
 </div>
 <div class="mb-4">
-    <div>🔗<a href="#">{{likeablePosts[2].title}}</a>
+    <div>🔗<a [routerLink]="['/details', likeablePosts[2].id]">{{likeablePosts[2].title}}</a>
     </div>
     <div class="badge bg-primary me-1" *ngFor=" let tag of likeablePosts[2].tags">{{tag}} </div>
     <div>{{likeablePosts[2].reactions}} 👍</div>
 </div>
 <div class="mb-4">
-    <div>🔗<a href="#">{{likeablePosts[3].title}}</a>
+    <div>🔗<a [routerLink]="['/details', likeablePosts[3].id]">{{likeablePosts[3].title}}</a>
     </div>
     <div class="badge bg-primary me-1" *ngFor=" let tag of likeablePosts[3].tags">{{tag}} </div>
     <div>{{likeablePosts[3].reactions}} 👍</div>

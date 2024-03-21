@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Route, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -7,20 +8,43 @@ import { InEvidenzaComponent } from './components/in-evidenza/in-evidenza.compon
 import { HomeComponent } from './components/home/home.component';
 import { RelatedComponent } from './components/related/related.component';
 import { LikeableComponent } from './components/likeable/likeable.component';
+import { ActivePostsComponent } from './components/active-posts/active-posts.component';
+import { InactivePostsComponent } from './components/inactive-posts/inactive-posts.component';
+import { DetailsComponent } from './components/details/details.component';
+
+const routes: Route[] = [
+    {
+        path: '',
+        component: HomeComponent        
+    },
+    {
+        path: 'active-posts',
+        component: ActivePostsComponent
+    },
+    {
+        path: 'inactive-posts',
+        component: InactivePostsComponent
+    },
+    {
+        path: 'details',
+        component: DetailsComponent
+    }
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    InEvidenzaComponent,
-    HomeComponent,
-    RelatedComponent,
-    LikeableComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        InEvidenzaComponent,
+        HomeComponent,
+        RelatedComponent,
+        LikeableComponent,
+        ActivePostsComponent,
+        InactivePostsComponent,
+        DetailsComponent
+    ],
+    imports: [BrowserModule, RouterModule.forRoot(routes)],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

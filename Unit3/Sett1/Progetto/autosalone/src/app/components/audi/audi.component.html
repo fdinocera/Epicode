@@ -1,1 +1,25 @@
-<p>audi works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-6 mb-3">
+            <img src="../../../assets/img/logo-audi-oggi.png" alt="logo" style="width: 240px;" class="mx-0">
+            <span class="h1 ms-3">Le nostre auto Audi</span>
+        </div>
+
+        <div class="col-10">
+            <div *ngFor="let car of Cars; let i = index">
+                <div class="card mb-5" style="width: 54rem;">
+                    <img src="https://www.kimballstock.com/pix/car/p/{{Cars[i].modelImage}}" class="card-img-top"
+                        alt="...">
+                    <div class="card-body" [ngClass]="Cars[i].available === true ? 'bg-success' : 'bg-danger'">
+                        <h5 class="card-title"> {{Cars[i].brand}} {{Cars[i].model}}</h5>
+
+                        <div>ANNO: {{Cars[i].year}}</div>
+                        <div>PREZZO: {{Cars[i].price}}</div>
+                        <div class="mb-3">{{ Cars[i].available ? 'PRONTA CONSEGNA: SI' : 'PRONTA CONSEGNA: NO' }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, numberAttribute } from '@angular/core';
 
 import { Post } from 'src/app/models/post.interface';
 
@@ -9,25 +9,15 @@ import { Post } from 'src/app/models/post.interface';
 })
 export class LikeableComponent {
 
-    //record!: Post
-
-    //postsLoaded: Post[] = []
-    //indici: number[] = []
     likeablePosts: Post[] = []
+    arrayIndexes: number[] = []
 
     constructor() {
-        this.getPosts().then((posts) => {
-            let n = Math.floor(Math.random() * posts.length)
-            this.likeablePosts.push(posts[n])
-            
-            n = Math.floor(Math.random() * posts.length)
-            this.likeablePosts.push(posts[n])
-
-            n = Math.floor(Math.random() * posts.length)
-            this.likeablePosts.push(posts[n])
-
-            n = Math.floor(Math.random() * posts.length)
-            this.likeablePosts.push(posts[n])            
+        this.getPosts().then((posts) => {            
+            this.getIndexes(posts.length)
+            for (let i = 0; i < 4; i++) {
+                this.likeablePosts.push(posts[this.arrayIndexes[i]])
+            }
         });
     }
 
@@ -35,5 +25,17 @@ export class LikeableComponent {
         let response = await fetch('assets/json/db.json');
         let data = await response.json();
         return data;
+    }
+
+    getIndexes(arrayLength: number) {
+        for (let i = 0; i < arrayLength; i++) {
+            const n = Math.floor(Math.random() * arrayLength)
+            if (!this.arrayIndexes.includes(n)) {
+                this.arrayIndexes.push(n)
+            }
+            if (this.arrayIndexes.length == 4) {
+                break;
+            }
+        }
     }
 }

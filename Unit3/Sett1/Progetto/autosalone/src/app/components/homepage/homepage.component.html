@@ -1,0 +1,83 @@
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="text-center">
+                    <img src="../../../assets/img/logo.png" alt="logo" style="width: 200px;" class="mb-2">
+                </div>
+                <div class="text-center h3">Il tuo autosalone di fiducia</div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="text-center h3 mb-3">I nostri marchi</div>
+        <div class="row">
+            <div class="col-4 text-center">
+                <img src="../../../assets/img/fiat.png" alt="logo" style="width: 120px;" class="mx-0">
+            </div>
+            <div class="col-4 text-center">
+                <img src="../../../assets/img/Ford_Motor_Company_Logo.svg.png" alt="logo" style="width: 240px;"
+                    class="mx-0">
+            </div>
+            <div class="col-4 text-center">
+                <img src="../../../assets/img/logo-audi-oggi.png" alt="logo" style="width: 240px;" class="mx-0">
+            </div>
+        </div>
+
+        <div class="text-center h3 mb-3">Auto in evidenza</div>
+
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-4 text-center">
+                <div class="card mb-5" style="width: 18rem;">
+                    <img src="https://www.kimballstock.com/pix/car/p/{{car1.modelImage}}" class="card-img-top"
+                        alt="...">
+                    <div class="card-body" [ngClass]="car1.available === true ? 'bg-success' : 'bg-danger'">
+                        <h5 class="card-title"> {{car1.brand}} {{car1.model}}</h5>
+
+                        <div>ANNO: {{car1.year}}</div>
+                        <div>PREZZO: {{car1.price}}</div>
+                        <div class="mb-3">{{ car1.available ? 'PRONTA CONSEGNA: SI' : 'PRONTA CONSEGNA: NO' }}</div>
+
+                        <!-- https://www.kimballstock.com/pix/car/p
+                           /01/aut-15-iz0614-01p.jpg) -->
+                        <!-- https://listcarbrands.com/wp-content/uploads/
+                           01/aut-15-iz0614-01p.jpg -->
+
+
+                        <!-- <a [routerLink]="['/'+ {{car1.brand | lowercase}}]" class="btn btn-primary">Tutte le nostre
+                            {{car1.brand}}</a> -->
+
+                            <div>[routerLink]="['/fiat']"</div>
+
+                        <!-- /{{car1.brand | lowercase}} -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 text-center"></div>
+
+            <div class="col-4 text-center">
+                <div class="card mb-5" style="width: 18rem;">
+                    <img src="https://www.kimballstock.com/pix/car/p/{{car2.modelImage}}" class="card-img-top"
+                        alt="...">
+                    <div class="card-body" [ngClass]="car2.available === true ? 'bg-success' : 'bg-danger'">
+                        <h5 class="card-title"> {{car2.brand}} {{car2.model}}</h5>
+
+                        <div>ANNO: {{car2.year}}</div>
+                        <div>PREZZO: {{car2.price}}</div>
+                        <div class="mb-3">{{ car2.available ? 'PRONTA CONSEGNA: SI' : 'PRONTA CONSEGNA: NO' }}</div>
+
+                        <!-- https://www.kimballstock.com/pix/car/p
+                           /01/aut-15-iz0614-01p.jpg) -->
+                        <!-- https://listcarbrands.com/wp-content/uploads/
+                           01/aut-15-iz0614-01p.jpg -->
+
+
+                        <a href="#" class="btn btn-primary">Tutte le nostre {{car2.brand}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

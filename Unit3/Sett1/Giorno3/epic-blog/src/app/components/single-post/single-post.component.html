@@ -1,0 +1,27 @@
+
+
+
+<div class="card my-2">
+    <div class="card-header d-flex justify-content-between">
+        <div class="text-danger badge rounded-pill"> {{post.tags.join(", ")}}</div>
+        <a routerLink="/post/{{post.id}}" class="btn btn-danger">Edit</a>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.body}}</p>
+        
+    </div>
+</div>
+
+
+<!-- <div class="card my-2">
+    <div class="card-header">
+        {{post.tags.join(", ")}}
+        crime, horror
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">titolo</h5>
+        <p class="card-text">body body body body body body body body body body body body body body body body body body body body body </p>
+        <a routerLink="/post/{{post.id}}" class="btn btn-dange">Edit</a>
+    </div>
+</div> -->

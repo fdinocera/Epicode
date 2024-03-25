@@ -11,6 +11,7 @@ import { LikeableComponent } from './components/likeable/likeable.component';
 import { ActivePostsComponent } from './components/active-posts/active-posts.component';
 import { InactivePostsComponent } from './components/inactive-posts/inactive-posts.component';
 import { DetailsComponent } from './components/details/details.component';
+import { SinglePostComponent } from './components/single-post/single-post.component';
 
 const routes: Route[] = [
     {
@@ -45,7 +46,8 @@ const routes: Route[] = [
         LikeableComponent,
         ActivePostsComponent,
         InactivePostsComponent,
-        DetailsComponent
+        DetailsComponent,
+        SinglePostComponent
     ],
     imports: [BrowserModule, RouterModule.forRoot(routes)],
     providers: [],

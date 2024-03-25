@@ -1,27 +1,38 @@
-
-
-
 <div class="card my-2">
     <div class="card-header d-flex justify-content-between">
-        <div class="text-danger badge rounded-pill"> {{post.tags.join(", ")}}</div>
-        <a routerLink="/post/{{post.id}}" class="btn btn-danger">Edit</a>
+        <span class="text-success fw-bold"> {{newPost.tags.join(", ")}}</span>
+        <a (click)="toggleEdit()" class="btn btn-danger">Edit</a>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">{{post.title}}</h5>
-        <p class="card-text">{{post.body}}</p>
-        
+    <div class="card-body" *ngIf="!edit; else editMode">
+        <h5 class="card-title">{{newPost.title}}</h5>
+        <p class="card-text">{{newPost.body}}</p>
     </div>
+
+    <ng-template #editMode>
+        <form>
+            <div class="row card-body">
+                <div>
+                    <input type="text" id="title" value="{{newPost.title}}" class="card-title w-100">
+                </div>
+                <div class="mb-3">
+                    <textarea rows="4" id="textarea" class="form-control">{{newPost.body}}</textarea>
+                </div>
+
+                <div (click)="setText()" class="btn btn-success">Save</div>
+            </div>
+        </form>
+    </ng-template>
 </div>
 
 
-<!-- <div class="card my-2">
-    <div class="card-header">
-        {{post.tags.join(", ")}}
-        crime, horror
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">titolo</h5>
-        <p class="card-text">body body body body body body body body body body body body body body body body body body body body body </p>
-        <a routerLink="/post/{{post.id}}" class="btn btn-dange">Edit</a>
-    </div>
-</div> -->
+<!-- 
+  <div class="luce" *ngIf="lucisingole.stato == 'ON'; else luceoff">
+        // qui inserisco il codice da visualizzare nel caso di luce ON
+  </div>
+
+  <ng-template #luceoff>
+        <div class="luce">
+            // qui inserisco il codice da visualizzare nel caso di luce OFF
+        </div>
+  </ng-template> 
+-->

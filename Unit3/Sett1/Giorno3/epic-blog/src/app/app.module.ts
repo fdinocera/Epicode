@@ -12,6 +12,10 @@ import { ActivePostsComponent } from './components/active-posts/active-posts.com
 import { InactivePostsComponent } from './components/inactive-posts/inactive-posts.component';
 import { DetailsComponent } from './components/details/details.component';
 import { SinglePostComponent } from './components/single-post/single-post.component';
+import { FormsModule } from '@angular/forms';
+import { RandomColorDirective } from './directives/random-color.directive';
+
+
 
 const routes: Route[] = [
     {
@@ -29,7 +33,7 @@ const routes: Route[] = [
     {
         path: 'details/:id',
         component: DetailsComponent
-    },    
+    },
     {
         path: '**',
         redirectTo: ''
@@ -47,7 +51,8 @@ const routes: Route[] = [
         ActivePostsComponent,
         InactivePostsComponent,
         DetailsComponent,
-        SinglePostComponent
+        SinglePostComponent,
+        RandomColorDirective
     ],
     imports: [BrowserModule, RouterModule.forRoot(routes)],
     providers: [],

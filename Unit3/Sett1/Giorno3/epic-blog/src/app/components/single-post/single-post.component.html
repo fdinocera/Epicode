@@ -1,12 +1,20 @@
 <div class="card my-2">
+
+
     <div class="card-header d-flex justify-content-between">
-        <span class="text-success fw-bold"> {{newPost.tags.join(", ")}}</span>
+        <div>
+            <span *ngFor="let post of newPost.tags">
+                <span class="badge rounded-pill me-1" appRandomColor >{{post | uppercase}}</span>
+            </span>
+        </div>
+
         <a (click)="toggleEdit()" class="btn btn-danger">Edit</a>
     </div>
     <div class="card-body" *ngIf="!edit; else editMode">
         <h5 class="card-title">{{newPost.title}}</h5>
         <p class="card-text">{{newPost.body}}</p>
     </div>
+
 
     <ng-template #editMode>
         <form>
@@ -17,22 +25,8 @@
                 <div class="mb-3">
                     <textarea rows="4" id="textarea" class="form-control">{{newPost.body}}</textarea>
                 </div>
-
                 <div (click)="setText()" class="btn btn-success">Save</div>
             </div>
         </form>
     </ng-template>
 </div>
-
-
-<!-- 
-  <div class="luce" *ngIf="lucisingole.stato == 'ON'; else luceoff">
-        // qui inserisco il codice da visualizzare nel caso di luce ON
-  </div>
-
-  <ng-template #luceoff>
-        <div class="luce">
-            // qui inserisco il codice da visualizzare nel caso di luce OFF
-        </div>
-  </ng-template> 
--->

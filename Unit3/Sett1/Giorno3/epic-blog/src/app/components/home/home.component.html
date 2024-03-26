@@ -25,11 +25,24 @@
                 <div><a routerLink="/inactive-posts">Post inattivi</a></div>
             </div>
         </div>
+
+
+        <div class="mt-5 mb-3">
+            <div class="badge me-2" (click)="filtra('AMERICAN', 1)" [ngClass]="{'bg-success': tagSelected==1}">AMERICAN</div>
+            <div class="badge me-2" (click)="filtra('CLASSIC', 2)"  [ngClass]="{'bg-success': tagSelected==2}">CLASSIC</div>
+            <div class="badge me-2" (click)="filtra('CRIME', 3)"    [ngClass]="{'bg-success': tagSelected==3}">CRIME</div>
+            <div class="badge me-2" (click)="filtra('ENGLISH', 4)"  [ngClass]="{'bg-success': tagSelected==4}">ENGLISH</div>
+            <div class="badge me-2" (click)="filtra('FICTION', 5)"  [ngClass]="{'bg-success': tagSelected==5}">FICTION</div>
+            <div class="badge me-2" (click)="filtra('FRENCH', 6)"   [ngClass]="{'bg-success': tagSelected==6}">FRENCH</div>
+            <div class="badge me-2" (click)="filtra('HISTORY', 7)"  [ngClass]="{'bg-success': tagSelected==7}">HISTORY</div>
+            <div class="badge me-2" (click)="filtra('LOVE', 8)"     [ngClass]="{'bg-success': tagSelected==8}">LOVE</div>
+            <div class="badge me-2" (click)="filtra('MAGICAL', 9)"  [ngClass]="{'bg-success': tagSelected==9}">MAGICAL</div>
+            <div class="badge me-2" (click)="filtra('MYSTERY', 10)" [ngClass]="{'bg-success': tagSelected==10}">MYSTERY</div>
+        </div>
     </div>
 
-    
-    
     <div *ngFor="let post of posts">
         <app-single-post [newPost]="post"></app-single-post>
     </div>
+
 </div>

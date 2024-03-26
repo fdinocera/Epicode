@@ -1,6 +1,6 @@
 import { Component, numberAttribute } from '@angular/core';
-
 import { Post } from 'src/app/models/post.interface';
+import { PostService } from 'src/app/service/post.service';
 
 @Component({
     selector: 'app-likeable',
@@ -12,22 +12,16 @@ export class LikeableComponent {
     likeablePosts: Post[] = []
     arrayIndexes: number[] = []
 
-    constructor() {
-        this.getPosts().then((posts) => {            
-            this.getIndexes(posts.length)
-            for (let i = 0; i < 4; i++) {
-                this.likeablePosts.push(posts[this.arrayIndexes[i]])
-            }
-        });
-    }
+    constructor(private postService: PostService) {
 
-    async getPosts() {
-        let response = await fetch('assets/json/db.json');
-        let data = await response.json();
-        return data;
-    }
+        const posts = postService.getPosts()
+        this.crea4IndiciRandom(posts.length);
+        for (let i = 0; i < 4; i++) {
+            this.likeablePosts.push(posts[this.arrayIndexes[i]])
+        }       
+    }  
 
-    getIndexes(arrayLength: number) {
+    crea4IndiciRandom(arrayLength: number) {
         for (let i = 0; i < arrayLength; i++) {
             const n = Math.floor(Math.random() * arrayLength)
             if (!this.arrayIndexes.includes(n)) {

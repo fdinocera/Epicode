@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/models/post.interface';
+import { PostService } from 'src/app/service/post.service';
 
 @Component({
     selector: 'app-details',
@@ -10,18 +11,12 @@ import { Post } from 'src/app/models/post.interface';
 export class DetailsComponent {
 
     idPost!: number
-    post!: Post
+    post!: Post | undefined
 
-    constructor(private route: ActivatedRoute) {
-        this.getPosts().then((posts) => {
-            this.idPost = Number(this.route.snapshot.paramMap.get('id'))
-            this.post = posts[this.idPost - 1]
-        });
-    }
+    constructor(private postService: PostService, private route: ActivatedRoute) {
 
-    async getPosts() {
-        let response = await fetch('assets/json/db.json');
-        let data = await response.json();
-        return data;
+        const n = Number(this.route.snapshot.paramMap.get('id'))
+        this.post = postService.getPost(n);
+
     }
 }

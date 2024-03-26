@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
 import { Post } from 'src/app/models/post.interface';
+import { PostService } from 'src/app/service/post.service';
 
 @Component({
     selector: 'app-inactive-posts',
@@ -9,19 +9,16 @@ import { Post } from 'src/app/models/post.interface';
 })
 export class InactivePostsComponent {
 
+    posts: Post[] = [];
 
-    posts!: Post[]
-
-    constructor() {
-        this.getPosts().then((posts) => {
-            this.posts = posts;
-            console.log(this.posts)
-        });
+    constructor(private postService: PostService) {
+        this.getPosts().then((data) => {
+            this.posts = data;
+        })
     }
 
     async getPosts() {
-        let response = await fetch('assets/json/db.json');
-        let data = (await response.json()) as Post[];
-        return data.filter((post) => !post.active)
+        let posts = await this.postService.getPosts()
+        return posts as Post[]
     }
 }

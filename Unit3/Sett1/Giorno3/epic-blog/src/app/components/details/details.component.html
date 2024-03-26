@@ -1,16 +1,22 @@
-
-
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
         <div class="card border-0">
-            <div class="card-body">
+            <div class="card-body" *ngIf="post; else recordNonTrovato ">
                 <span class="text-uppercase fw-bold text-primary-emphasis">{{post.tags.join(', ')}}</span>
                 <h1 class="card-title">{{post.title}}</h1>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Post id: {{idPost}} - Reactions: {{post.reactions}}
+                <h6 class="card-subtitle mb-2 text-body-secondary">Post id: {{post.id}} - Reactions: {{post.reactions}}
                 </h6>
                 <p class="card-text"> {{post.body}}</p>
             </div>
+
+
+            <ng-template class="card-body" #recordNonTrovato>
+                <span class="text-uppercase fw-bold text-primary-emphasis"></span>
+                <h1 class="card-title">Post non trovato</h1>
+                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+                <p class="card-text"></p>
+            </ng-template>
         </div>
     </div>
 </div>

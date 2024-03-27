@@ -24,5 +24,5 @@ export class HomeComponent implements OnInit {
     filtra(filter: string, index: number) {
         this.tagSelected = index;
         this.posts = this.postSrv.getPostsByFilter(filter);
-    }
+    }    
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, catchError, throwError } from 'rxjs';
 import { Photo } from '../models/photo';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,7 +11,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PhotoServiceService {
     apiURL = 'https://jsonplaceholder.typicode.com/photos';
-    //subj = new Subject<Photo[]>();
+    favoritesCounter = 0;
+    favoritesSub = new Subject<number>();
 
 
     constructor(private http: HttpClient) { }
@@ -20,12 +21,19 @@ export class PhotoServiceService {
         return this.http.get<Photo[]>(this.apiURL)
     }
 
-    deleteFoto(){
-        
+    deleteFoto(id: number) {
+        return this.http.delete(`${this.apiURL}/${id}`)
+            .pipe(
+                catchError(err => {
+                    // return throwError(err)
+                    return err;
+                })
+            )
     }
 
-
-
-
+    addFavorites(){
+        this.favoritesCounter++;
+        this.favoritesSub.next(this.favoritesCounter)
+    }
 }
 

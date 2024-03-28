@@ -8,7 +8,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FiatComponent } from './components/fiat/fiat.component';
 import { FordComponent } from './components/ford/ford.component';
 import { AudiComponent } from './components/audi/audi.component';
-import { audit } from 'rxjs';
 import { FooterComponent } from './components/footer/footer.component';
 
 let routes: Route[] = [

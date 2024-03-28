@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Products } from 'src/models/products';
-import { Subject, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { TypeAPI } from 'src/models/type-api';
+import { CartItem } from 'src/models/cart-item';
+import { Observable, Observer } from 'rxjs';
+
+
 
 @Injectable({
     providedIn: 'root'
@@ -10,31 +13,63 @@ import { catchError } from 'rxjs/operators';
 export class ProductsService {
     apiUrl = 'https://dummyjson.com/products';
 
+    cart: CartItem[] = [];
+    favs: Products[] = [];
+
     constructor(private http: HttpClient) { }
 
     getProducts() {
-        console.log(this.http.get<Products[]>(this.apiUrl))
-        return this.http.get<Products[]>(this.apiUrl)
-           
-        
-        // .pipe(
-        //     catchError((err) => {
-        //         return throwError(this.getErrorMessage(err.status));
-        //     })
-        // )
+        return this.http.get<TypeAPI>(this.apiUrl);
     }
 
-    // getErrorMessage(status: number) {
-    //     let message = '';
-    //     switch (status) {
-    //         case 404:
-    //             message = 'Elementi non trovati';
-    //             break;
+    addToCart(product: Products) {
+        const found = this.cart.find(item => product.id == item.id);
+        if (found) {
+            found.amount += 1;
+            found.totalPrice = found.amount * found.price;
+        } else {
+            this.cart.push({ ...product, amount: 1, totalPrice: product.price });
+        }
+    }
 
-    //         default:
-    //             message = 'Qualcosa non ha funzionato nella chiamata';
-    //             break;
-    //     }
-    //     return message;
-    // }
+    removeFromCart(id: number) {
+        const index = this.cart.findIndex(prd => prd.id === id)
+        if (this.cart[index].amount === 1) {
+            this.cart.splice(index, 1)
+        } else {
+            this.cart[index].amount--;
+            this.cart[index].totalPrice = this.cart[index].price * this.cart[index].amount;
+        }
+    }
+
+    get cartList() {
+        return new Observable((obs: Observer<CartItem[]>) => {
+            obs.next(this.cart)
+        }
+        )
+    }
+
+    //Favorites
+    addToFavs(product: Products) {
+        const found = this.favs.find(prod => { prod.id === product.id })
+        if (!found) {
+            this.favs.push(product)
+        }
+    }
+
+    isFavorite(id: number) {
+        return this.favs.find(fav => fav.id === id)
+    }
+
+    get favoritesList() {
+        return new Observable(
+            (obs: Observer<Products[]>) => {
+                obs.next(this.favs)
+            }
+        )
+    }
+    removeFromFavorites(id: number) {
+        const index = this.favs.findIndex(item => item.id === id)
+        this.favs.splice(index, 1)
+    }    
 }

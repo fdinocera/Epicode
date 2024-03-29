@@ -1,0 +1,29 @@
+<div class="container">
+
+    <h1 class="mt-3">Hey Boss, what's my task for today?</h1>
+
+    <div class="">
+        <button class="btn bg-primary me-2 text-white">See how much we've accomplished!</button>
+        <button class="btn bg-primary me-2 text-white">What's left?</button>
+        <button class="btn bg-primary me-2 text-white">By user</button>
+        <button class="btn bg-primary me-2 text-white">See all</button>
+    </div>
+    <div>
+        <input type="text" placeholder="Enter your name here" class="my-3 pe-3 form-control" />
+    </div>
+
+    <div *ngFor="let todo of todos">
+        
+        <ul class="list-group">        
+            <li class="list-group-item mb-1"  [ngClass]="todo.completed ? 'bg-success' : 'bg-danger'">
+                <div>
+                    <input class="form-check-input me-1" type="checkbox" [checked]="todo.completed" id="firstCheckbox">
+                    <label class="form-check-label fw-bold" for="firstCheckbox">{{todo.todo}}</label>
+                </div>
+                <div class="ms-4">
+                    <div> Assigned to: {{getUtenteAssegnatario(todo.id)}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

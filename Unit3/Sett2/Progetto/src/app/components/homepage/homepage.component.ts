@@ -8,6 +8,7 @@ import { TodoService } from 'src/app/service/todo.service';
     styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+    apiURL = 'http://localhost:3000'
 
     users: Users[] = [];
     todos: Todo[] = [];
@@ -16,20 +17,22 @@ export class HomepageComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.todoService.getUsers().then(data => {
-            this.users = data
-        })
+        this.todoService.getUsers().subscribe(data => {
+            this.users = data;
+            this.todoService.saveDataUsers(data);
+        })        
 
-        this.todoService.getTodos().then(data => {
-            this.todos = data
+        this.todoService.getTodos().subscribe(data => {
+            this.todos = data;
+            this.todoService.saveDataTodo(data);
         })
     }
 
     getUtenteAssegnatario(id: number) {
-        const utente: Users | undefined = this.users.find(user => user.id === id)
-        if (utente) {
-            return utente?.firstName + " " + utente?.lastName
-        }
-        return null
+        return this.todoService.getUtenteAssegnatario(id);
+    }
+
+    cambiaStatoTask(id: number) {
+        this.todoService.cambiaStatoTask(id);
     }
 }

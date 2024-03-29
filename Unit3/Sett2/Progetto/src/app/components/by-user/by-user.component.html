@@ -1,0 +1,33 @@
+<div class="container">
+    <div *ngFor="let user of users">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{user.image}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+                        <p class="card-text">{{ user.title }}</p>
+                        <div *ngFor="let todo of todos">
+                            <div *ngIf="todo.userId == user.id">
+                                <ul class="list-group">
+                                    <li class="list-group-item mb-1"
+                                        [ngClass]="todo.completed ? 'bg-success' : 'bg-danger'">
+                                        <div>
+                                            <input class="form-check-input me-1" type="checkbox"                                                
+                                                [checked]="todo.completed" id="firstCheckbox"
+                                                (click)="cambiaStatoTask(todo.id);">
+                                            <label class="form-check-label fw-bold"
+                                                for="firstCheckbox">{{todo.todo}}</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

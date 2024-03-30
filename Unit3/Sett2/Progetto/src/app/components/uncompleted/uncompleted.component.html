@@ -1,16 +1,17 @@
 <div class="container">
-    <div *ngFor="let todo of todos">        
-        
-        <ul class="list-group">        
-            <li class="list-group-item mb-1"  [ngClass]="todo.completed ? 'bg-success' : 'bg-danger'">
+    <div *ngFor="let todo of todos">
+
+        <ul class="list-group">
+            <li class="list-group-item mb-1" [ngClass]="todo.completed ? 'bg-success' : 'bg-danger'">
                 <div>
-                    <input class="form-check-input me-1" type="checkbox" [checked]="todo.completed" id="firstCheckbox" (click)="cambiaStatoTask(todo.id)" >
+                    <input class="form-check-input me-1" type="checkbox" [checked]="todo.completed" id="firstCheckbox"
+                        (click)="cambiaStatoTask(todo.id)">
                     <label class="form-check-label fw-bold" for="firstCheckbox">{{todo.todo}}</label>
                 </div>
                 <div class="ms-4">
-                    <div> Assigned to: {{getUtenteAssegnatario(todo.id)}}</div>
+                    <div> Assigned to: {{getUtenteAssegnatario(todo.userId)}}</div>
                 </div>
             </li>
         </ul>
     </div>
-</div><p>uncompleted works!</p>
+</div>

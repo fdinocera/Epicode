@@ -8,10 +8,14 @@ import { TodoService } from 'src/app/service/todo.service';
     styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+
     apiURL = 'http://localhost:3000'
 
     users: Users[] = [];
     todos: Todo[] = [];
+
+    filteredTodos: Todo[] = [];
+    queryRequested = false;
 
     constructor(private todoService: TodoService) {
     }
@@ -20,7 +24,7 @@ export class HomepageComponent implements OnInit {
         this.todoService.getUsers().subscribe(data => {
             this.users = data;
             this.todoService.saveDataUsers(data);
-        })        
+        })
 
         this.todoService.getTodos().subscribe(data => {
             this.todos = data;
@@ -34,5 +38,11 @@ export class HomepageComponent implements OnInit {
 
     cambiaStatoTask(id: number) {
         this.todoService.cambiaStatoTask(id);
+    }
+
+    filtra(event: any) {
+        this.queryRequested = true;
+        const textSearch = event.target.value;
+        this.filteredTodos = this.todoService.filtra(textSearch) as Todo[];        
     }
 }

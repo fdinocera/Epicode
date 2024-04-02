@@ -1,3 +1,9 @@
+# La soluzione utilizza json-server
+## La home page implementa la barra di ricerca
+#
+#
+#
+
 # Progetto
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.

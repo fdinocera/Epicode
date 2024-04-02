@@ -14,6 +14,10 @@ export class HomepageComponent implements OnInit {
     users: Users[] = [];
     todos: Todo[] = [];
 
+    users2: Users[] = [];
+
+
+
     filteredTodos: Todo[] = [];
     queryRequested = false;
 
@@ -29,7 +33,7 @@ export class HomepageComponent implements OnInit {
         this.todoService.getTodos().subscribe(data => {
             this.todos = data;
             this.todoService.saveDataTodo(data);
-        })
+        })        
     }
 
     getUtenteAssegnatario(id: number) {
@@ -43,6 +47,6 @@ export class HomepageComponent implements OnInit {
     filtra(event: any) {
         this.queryRequested = true;
         const textSearch = event.target.value;
-        this.filteredTodos = this.todoService.filtra(textSearch) as Todo[];        
+        this.filteredTodos = this.todoService.filtra(textSearch) as Todo[];
     }
 }

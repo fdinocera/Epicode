@@ -62,8 +62,7 @@ export class ProductsService {
     }
 
     get favoritesList() {
-        return new Observable(
-            (obs: Observer<Products[]>) => {
+        return new Observable((obs: Observer<Products[]>) => {
                 obs.next(this.favs)
             }
         )

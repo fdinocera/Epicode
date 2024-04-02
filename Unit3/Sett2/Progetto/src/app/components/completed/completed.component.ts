@@ -26,11 +26,11 @@ export class CompletedComponent implements OnInit {
         })
     }
 
-    cambiaStatoTask(id: number) {
-        this.todoService.cambiaStatoTask(id);
-    }
-
     getUtenteAssegnatario(id: number) {
-        return this.todoService.getUtenteAssegnatario(id);        
+        return this.todoService.getUtenteAssegnatario(id);
+    }
+    
+    cambiaStatoTask(id: number) {        
+        this.todoService.cambiaStatoTask(id);
     }
 }

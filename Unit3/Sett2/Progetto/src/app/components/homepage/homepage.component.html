@@ -6,11 +6,11 @@
 
     <div *ngIf="queryRequested; else allTodos">
 
-        <div class="bg-dark-subtle mb-3 rounded p-2"> Totale task: {{filteredTodos.length}}</div>
+        <div class="bg-dark-subtle mb-3 rounded p-2"> Total tasks: {{filteredTodos.length}}</div>
 
         <div *ngFor="let todo of filteredTodos">            
             <ul class="list-group">
-                <li class="list-group-item mb-1" [ngClass]="todo?.completed ? 'bg-success' : 'bg-danger'">
+                <li class="list-group-item mb-1" [ngClass]="todo.completed ? 'bg-success' : 'bg-danger'">
                     <div>
                         <input class="form-check-input me-1" type="checkbox" [checked]="todo?.completed"
                             id="firstCheckbox" (click)="cambiaStatoTask(todo.id)">

@@ -10,8 +10,9 @@ export class TodoService {
 
     users: Users[] = [];
     todos: Todo[] = [];
-
-    constructor(private http: HttpClient) { }
+    
+    constructor(private http: HttpClient) {
+    }
 
     getUsers() {
         return this.http.get<Users[]>(this.apiURL + '/users');
@@ -41,17 +42,17 @@ export class TodoService {
             this.http.put<Todo>(this.apiURL + `/todo/${id}`, task).subscribe();
         }
     }
-    
+
     filtra(textSearch: string) {
         const filteredTodos: Todo[] = [];
 
         for (let i = 0; i < this.todos.length; i++) {
-            const utente = this.getUtenteAssegnatario(this.todos[i].userId);            
-            
-            if (utente.toLocaleLowerCase().indexOf(textSearch.toLocaleLowerCase()) >= 0) {
+            const utente = this.getUtenteAssegnatario(this.todos[i].userId);
+
+            if (utente.toLowerCase().indexOf(textSearch.toLowerCase()) >= 0) {
                 filteredTodos.push(this.todos[i])
             }
         }
         return filteredTodos
-    }   
+    }
 }

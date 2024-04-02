@@ -805,19 +805,19 @@
     {
       "id": "1",
       "todo": "Do something nice for someone I care about",
-      "completed": false,
+      "completed": true,
       "userId": 100
     },
     {
       "id": "2",
       "todo": "Memorize the fifty states and their capitals",
-      "completed": false,
+      "completed": true,
       "userId": 48
     },
     {
       "id": "3",
       "todo": "Watch a classic movie",
-      "completed": false,
+      "completed": true,
       "userId": 4
     },
     {
@@ -835,19 +835,19 @@
     {
       "id": "6",
       "todo": "Bake pastries for me and neighbor",
-      "completed": true,
+      "completed": false,
       "userId": 39
     },
     {
       "id": "7",
       "todo": "Go see a Broadway production",
-      "completed": true,
+      "completed": false,
       "userId": 32
     },
     {
       "id": "8",
       "todo": "Write a thank you letter to an influential person in my life",
-      "completed": true,
+      "completed": false,
       "userId": 13
     },
     {
@@ -883,7 +883,7 @@
     {
       "id": "14",
       "todo": "Plan a vacation I've always wanted to take",
-      "completed": false,
+      "completed": true,
       "userId": 28
     },
     {

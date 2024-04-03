@@ -1,0 +1,27 @@
+
+<!-- <app-navbar></app-navbar> -->
+
+<h1>Preferiti</h1>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-9">
+            <div class="row">
+                <div class="col-4" *ngFor="let product of favorites">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{product.thumbnail}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.title}}</h5>
+                            <p class="card-text">{{product.description}}</p>
+
+                            <div class="d-flex justify-content-between">                                
+                                <button (click)="removeFromFavorites(product.id)" class="btn btn-danger"><i class="bi bi-heart-fill"></i></button>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>

@@ -12,16 +12,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Giorno1'`, () => {
+  it(`should have as title 'Giorno3'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Giorno1');
+    expect(app.title).toEqual('Giorno3');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Giorno1 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Giorno3 app is running!');
   });
 });

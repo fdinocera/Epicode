@@ -9,7 +9,7 @@ import { HomecomponentComponent } from './components/homecomponent/homecomponent
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth/auth.guard';
 import { MoviesComponent } from './components/movies/movies.component';
 import { UsersComponent } from './components/users/users.component';
@@ -17,6 +17,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { FavMovieComponent } from './components/fav-movie/fav-movie.component';
 import { Error404Component } from './components/error404/error404.component';
+import { TokenInterceptor } from './auth/token.interceptor';
 
 
 
@@ -81,7 +82,11 @@ const routes: Route[] = [
         FormsModule,
         ReactiveFormsModule,      
     ],
-    providers: [],
+    providers: [{
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi: true
+    }],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

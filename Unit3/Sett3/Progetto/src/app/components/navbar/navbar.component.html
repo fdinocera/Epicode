@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg bg-black w-100">
+    <div class="container-fluid">
+        <a class="navbar-brand text-danger" [routerLink]="['/']">MyMovie</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                <!-- home -->
+                <li class="nav-item">
+                    <a
+                        class="nav-link text-white"
+                        [routerLink]="['/']"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        >Home</a
+                    >
+                </li>
+
+                <!-- movies -->
+                <li *ngIf="user" class="nav-item">                    
+                    <a class="nav-link text-white" [routerLink]="['/movies']" routerLinkActive="active">Film</a>
+                </li>
+
+                <!-- utenti -->                
+                <li *ngIf="user" class="nav-item"> <a class="nav-link text-white"  [routerLink]="['/users']"  routerLinkActive="active" >Utenti</a > </li>            
+                    <li *ngIf="!user" class="nav-item">
+                    <a class="nav-link text-white" [routerLink]="['/login']" routerLinkActive="active">Accedi</a>
+                </li>
+                
+                <!-- profilo -->
+                <li class="nav-item dropdown" *ngIf="user">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Profilo
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" [routerLink]="['profile/details']">Dettagli</a></li>                        
+                        <li><a class="dropdown-item" [routerLink]="['profile/favorites']">Preferiti</a></li>                      
+                    </ul>
+                </li>
+                
+                <!-- registrati -->
+                <li *ngIf="!user" class="nav-item">
+                    <a
+                        class="nav-link text-white"
+                        [routerLink]="['/register']"
+                        routerLinkActive="active"
+                        >Registrati</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h4 *ngIf="user" class="text-white float-end me-3">Benvenuto {{ user.user.name }}</h4>
+    <button type="button" class="btn btn-danger float-end me-4" *ngIf="user" (click)="logout()">Esci</button>
+</nav>

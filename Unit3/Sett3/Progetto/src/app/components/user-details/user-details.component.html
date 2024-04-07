@@ -1,0 +1,11 @@
+
+<h1 class="text-center">I tuoi dati</h1>
+<ng-container *ngIf="user; else elseTemplate">
+    <h3>{{ user.user.name }}</h3>
+    <h4>Email: {{ user.user.email }}</h4>    
+</ng-container>
+
+<ng-template #elseTemplate>
+    <h3>Utente non trovato</h3>
+</ng-template>
+

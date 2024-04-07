@@ -1,0 +1,24 @@
+
+
+<div class="container">
+    <h2 class="text-center">Movies</h2>
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let movie of movies; let i = index">                
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="card-img-top"
+                                alt="locandina id: {{movie.id}}">
+                            <h5 class="card-title">{{ movie.title}}</h5>
+                            
+                            <button [ngClass]="isFavorite(movie.id)? 'btn btn-danger': 'btn btn-secondary'"  (click)="toggleFavorite(movie.id)">
+                                <i [ngClass]="isFavorite(movie.id) ? 'bi bi-heart-fill': 'bi bi-plus-square'"></i>
+                            </button>
+                        </div>                        
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

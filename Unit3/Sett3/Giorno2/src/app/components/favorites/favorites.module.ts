@@ -7,9 +7,6 @@ import { FavoritesComponent } from './favorites.component';
 
 @NgModule({
   declarations: [FavoritesComponent],
-  imports: [
-    CommonModule,
-    FavoritesRoutingModule
-  ]
+  imports: [CommonModule, FavoritesRoutingModule]
 })
 export class FavoritesModule { }

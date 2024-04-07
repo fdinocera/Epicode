@@ -1,0 +1,12 @@
+<h1 class="text-center">I miei film preferiti</h1>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-3" *ngFor="let fav of favsList">
+            <div >
+                <app-fav-movie [movie]="fav"></app-fav-movie>
+            </div>
+        </div>
+    </div>
+</div>

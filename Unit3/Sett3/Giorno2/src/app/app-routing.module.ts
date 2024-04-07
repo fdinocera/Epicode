@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes } from '@angular/router';
 
-import { AppRoutingRoutingModule } from './app-routing-routing.module';
-import {  Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingRoutingModule } from './app-routing-routing.module';
 
 const routes: Routes = [
   {
@@ -15,6 +15,7 @@ const routes: Routes = [
   {
     path: 'favorites',
     component: FavoritesComponent
+    //loadChildren: ()=> import ('./components/favorites/favorites.module').then((m) =>FavoritesComponent)
   }
 ]
 
@@ -23,8 +24,8 @@ const routes: Routes = [
   declarations: [],
   imports: [
     //CommonModule,
-    //AppRoutingRoutingModule,
-    RouterModule.forRoot(routes)
+    AppRoutingRoutingModule,
+    RouterModule.forRoot(routes),FormsModule
   ],
   exports: [RouterModule]
 })

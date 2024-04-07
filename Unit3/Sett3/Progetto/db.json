@@ -29,6 +29,12 @@
       "password": "$2a$10$gwZkR9rVrNa3U4.Mc2YQSuOKWb/09MA07WUh5G9CS9oeM38sqU.zG",
       "name": "Maria Verdi",
       "id": 6
+    },
+    {
+      "email": "aldo@bianchi.com",
+      "password": "$2a$10$oVegZ0bIqqqTdZiu7c32tOkg5EH.bv8LFeBQdG7jmLIVOjO470HT6",
+      "name": "aldo bianchi",
+      "id": 7
     }
   ],
   "favorites": [
@@ -68,19 +74,74 @@
       "id": 46
     },
     {
-      "userId": 4,
-      "movieId": 460465,
-      "id": 47
+      "userId": 6,
+      "movieId": 567189,
+      "id": 51
     },
     {
       "userId": 4,
-      "movieId": 567189,
-      "id": 48
+      "movieId": 578701,
+      "id": 52
+    },
+    {
+      "userId": 4,
+      "movieId": 632357,
+      "id": 53
     },
     {
       "userId": 6,
       "movieId": 460465,
-      "id": 50
+      "id": 57
+    },
+    {
+      "userId": 7,
+      "movieId": 804435,
+      "id": 58
+    },
+    {
+      "userId": 7,
+      "movieId": 399566,
+      "id": 59
+    },
+    {
+      "userId": 6,
+      "movieId": 804435,
+      "id": 60
+    },
+    {
+      "userId": 6,
+      "movieId": 399566,
+      "id": 61
+    },
+    {
+      "userId": 4,
+      "movieId": 804435,
+      "id": 62
+    },
+    {
+      "userId": 4,
+      "movieId": 399566,
+      "id": 63
+    },
+    {
+      "userId": 7,
+      "movieId": 804435,
+      "id": 64
+    },
+    {
+      "userId": 7,
+      "movieId": 399566,
+      "id": 65
+    },
+    {
+      "userId": 7,
+      "movieId": 804435,
+      "id": 66
+    },
+    {
+      "userId": 7,
+      "movieId": 399566,
+      "id": 67
     }
   ],
   "genres": [

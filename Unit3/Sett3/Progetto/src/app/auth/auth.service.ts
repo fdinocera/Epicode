@@ -20,14 +20,13 @@ export class AuthService {
     private authSub = new BehaviorSubject<AuthData | null>(null);
     user$ = this.authSub.asObservable();
 
-
     constructor(private http: HttpClient, private router: Router) { }
 
     login(data: { email: string; password: string }) {
-        return this.http.post<AuthData>(`${this.apiURL}login`, data).pipe(
-            tap((data) => {
-                console.log('Auth data: ', data);
-            }),
+        return this.http.post<AuthData>(`${this.apiURL}login`, data).pipe(            
+            tap(data =>
+                console.log(data)
+            ),
             tap((data) => {
                 this.authSub.next(data);
                 localStorage.setItem('user', JSON.stringify(data));
@@ -82,8 +81,7 @@ export class AuthService {
                 return throwError('Utente non trovato');
                 break;
 
-            default:
-                alert('errore nella chiamata post (registrazione utente)')
+            default:                
                 return throwError('Errore nella chiamata');
                 break;
         }

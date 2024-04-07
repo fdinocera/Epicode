@@ -16,6 +16,7 @@ import { UsersComponent } from './components/users/users.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { FavMovieComponent } from './components/fav-movie/fav-movie.component';
+import { Error404Component } from './components/error404/error404.component';
 
 
 
@@ -52,13 +53,11 @@ const routes: Route[] = [
         path: 'register',
         component: RegisterComponent
     },
-    // {
-    //     path:'**',
-    //     component
-    // }
+    {
+        path:'**',
+        component: Error404Component
+    }
 ];
-
-
 
 @NgModule({
     declarations: [
@@ -73,6 +72,7 @@ const routes: Route[] = [
         UserDetailsComponent,
         FavoritesComponent,
         FavMovieComponent,
+        Error404Component,
     ],
     imports: [
         BrowserModule,
